@@ -30,6 +30,8 @@
 		041280782AF1D14000972552 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280772AF1D14000972552 /* Resource.swift */; };
 		4F07B8442BC138D200E1DB2E /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07B8432BC138D200E1DB2E /* PhoneViewModel.swift */; };
 		4F07B8462BC1392900E1DB2E /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07B8452BC1392900E1DB2E /* ViewModelType.swift */; };
+		4F07B8492BC3724800E1DB2E /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07B8482BC3724800E1DB2E /* SignUpViewModel.swift */; };
+		4F07B8632BC3C35A00E1DB2E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07B8622BC3C35A00E1DB2E /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		041280772AF1D14000972552 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		4F07B8432BC138D200E1DB2E /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 		4F07B8452BC1392900E1DB2E /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		4F07B8482BC3724800E1DB2E /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		4F07B8622BC3C35A00E1DB2E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 				0412802E2AEF9BAC00972552 /* LaunchScreen.storyboard */,
 				041280312AEF9BAC00972552 /* Info.plist */,
 				041280772AF1D14000972552 /* Resource.swift */,
+				4F07B8622BC3C35A00E1DB2E /* UIViewController+Extension.swift */,
 			);
 			path = SeSACRxThreads;
 			sourceTree = "<group>";
@@ -163,7 +168,7 @@
 		041280532AEF9C1F00972552 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				041280692AEFA91E00972552 /* SignUpViewController.swift */,
+				4F07B8472BC3722F00E1DB2E /* SignUp */,
 				0412806B2AEFABFE00972552 /* PasswordViewController.swift */,
 			);
 			path = SignUp;
@@ -204,6 +209,15 @@
 				4F07B8432BC138D200E1DB2E /* PhoneViewModel.swift */,
 			);
 			path = Phone;
+			sourceTree = "<group>";
+		};
+		4F07B8472BC3722F00E1DB2E /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				041280692AEFA91E00972552 /* SignUpViewController.swift */,
+				4F07B8482BC3724800E1DB2E /* SignUpViewModel.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,7 +361,9 @@
 			files = (
 				041280782AF1D14000972552 /* Resource.swift in Sources */,
 				0412806F2AEFAD2D00972552 /* BirthdayViewController.swift in Sources */,
+				4F07B8492BC3724800E1DB2E /* SignUpViewModel.swift in Sources */,
 				041280652AEFA2F000972552 /* SignTextField.swift in Sources */,
+				4F07B8632BC3C35A00E1DB2E /* UIViewController+Extension.swift in Sources */,
 				0412806C2AEFABFE00972552 /* PasswordViewController.swift in Sources */,
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,

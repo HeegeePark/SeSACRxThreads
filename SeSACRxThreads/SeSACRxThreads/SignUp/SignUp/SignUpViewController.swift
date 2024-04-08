@@ -1,4 +1,4 @@
-//
+ //
 //  SignUpViewController.swift
 //  SeSACRxThreads
 //
@@ -7,12 +7,18 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
-class SignUpViewController: UIViewController {
+final class SignUpViewController: UIViewController {
 
-    let emailTextField = SignTextField(placeholderText: "이메일을 입력해주세요")
-    let validationButton = UIButton()
-    let nextButton = PointButton(title: "다음")
+    private let emailTextField = SignTextField(placeholderText: "이메일을 입력해주세요")
+    private let validationButton = UIButton()
+    private let nextButton = PointButton(title: "다음")
+    
+    private let disposeBag = DisposeBag()
+    
+    private let viewModel = SignUpViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +28,33 @@ class SignUpViewController: UIViewController {
         configureLayout()
         configure()
         
-        nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
-
+        bind()
     }
     
-    @objc func nextButtonClicked() {
-        navigationController?.pushViewController(PasswordViewController(), animated: true)
+    func bind() {
+        let input = SignUpViewModel.Input(
+            emailText: emailTextField.rx.text,
+            validationButtonTapEvent: validationButton.rx.tap,
+            nextButtonTapEvent: nextButton.rx.tap
+        )
+        
+        let output = viewModel.transform(input)
+        
+        output.emailValidationText
+            .drive(with: self) { owner, text in
+                owner.showAlert(title: nil, message: text, ok: "확인", handler: nil)
+            }
+            .disposed(by: disposeBag)
+        
+        output.isValidEmail
+            .drive(nextButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        output.nextButtonTapTrigger
+            .bind(with: self, onNext: { owner, _ in
+                owner.navigationController?.pushViewController(NicknameViewController(), animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 
     func configure() {
@@ -63,6 +90,4 @@ class SignUpViewController: UIViewController {
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
     }
-    
-
 }
