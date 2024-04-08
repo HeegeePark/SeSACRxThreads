@@ -7,6 +7,8 @@
  
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class BirthdayViewController: UIViewController {
     
@@ -66,6 +68,10 @@ class BirthdayViewController: UIViewController {
   
     let nextButton = PointButton(title: "가입하기")
     
+    let viewModel = BirthdayViewModel()
+    
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -73,11 +79,47 @@ class BirthdayViewController: UIViewController {
         
         configureLayout()
         
-        nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
+        
     }
     
-    @objc func nextButtonClicked() {
-        print("가입완료")
+    func bind() {
+        let input = BirthdayViewModel.Input(birthday: birthDayPicker.rx.date)
+        
+        let output = viewModel.transform(input)
+        
+        birthDayPicker.rx.date
+            .bind(to: input.birthday)
+            .disposed(by: disposeBag)
+        
+        output.year
+            .drive(yearLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.month
+            .drive(monthLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.day
+            .drive(dayLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.isValidDate
+            .drive(nextButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        output.isValidDate
+            .drive(with: self, onNext: { owner, isValid in
+                owner.nextButton.backgroundColor = isValid ? .systemBlue: .lightGray
+                let title = isValid ? "가입 가능한 나이입니다.": "만 17세 이상만 가입 가능합니다."
+                owner.nextButton.setTitle(title, for: .normal)
+            })
+            .disposed(by: disposeBag)
+        
+        nextButton.rx.tap
+            .bind(with: self) { owner, _ in
+                // TODO: SampleViewController로 window rootVC 교체
+            }
+            .disposed(by: disposeBag)
     }
 
     
@@ -112,5 +154,4 @@ class BirthdayViewController: UIViewController {
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
     }
-
 }
