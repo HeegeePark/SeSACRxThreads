@@ -78,8 +78,7 @@ class BirthdayViewController: UIViewController {
         view.backgroundColor = Color.white
         
         configureLayout()
-        
-        
+        bind()
     }
     
     func bind() {
@@ -104,20 +103,18 @@ class BirthdayViewController: UIViewController {
             .disposed(by: disposeBag)
         
         output.isValidDate
-            .drive(nextButton.rx.isEnabled)
-            .disposed(by: disposeBag)
-        
-        output.isValidDate
-            .drive(with: self, onNext: { owner, isValid in
-                owner.nextButton.backgroundColor = isValid ? .systemBlue: .lightGray
-                let title = isValid ? "가입 가능한 나이입니다.": "만 17세 이상만 가입 가능합니다."
-                owner.nextButton.setTitle(title, for: .normal)
+            .drive(with: self, onNext: { owner, value in
+                owner.nextButton.isEnabled = value
+                owner.nextButton.backgroundColor = value ? .systemBlue: .lightGray
+                owner.infoLabel.textColor = value ? .label: .red
+                owner.infoLabel.text = value ? "가입 가능한 나이입니다.": "만 17세 이상만 가입 가능합니다."
             })
             .disposed(by: disposeBag)
         
         nextButton.rx.tap
             .bind(with: self) { owner, _ in
-                // TODO: SampleViewController로 window rootVC 교체
+                let vc = SampleViewController()
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootVC(vc, animated: false)
             }
             .disposed(by: disposeBag)
     }

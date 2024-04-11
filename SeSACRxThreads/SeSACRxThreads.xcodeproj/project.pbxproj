@@ -33,6 +33,7 @@
 		4F07B8492BC3724800E1DB2E /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07B8482BC3724800E1DB2E /* SignUpViewModel.swift */; };
 		4F07B8632BC3C35A00E1DB2E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07B8622BC3C35A00E1DB2E /* UIViewController+Extension.swift */; };
 		4F07B8662BC4B10200E1DB2E /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07B8652BC4B10200E1DB2E /* BirthdayViewModel.swift */; };
+		4F07B87D2BC825FD00E1DB2E /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07B87C2BC825FD00E1DB2E /* SampleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		4F07B8482BC3724800E1DB2E /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		4F07B8622BC3C35A00E1DB2E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		4F07B8652BC4B10200E1DB2E /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
+		4F07B87C2BC825FD00E1DB2E /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		041280222AEF9BAB00972552 /* SeSACRxThreads */ = {
 			isa = PBXGroup;
 			children = (
+				4F07B87B2BC825F100E1DB2E /* Sample */,
 				4F07B8452BC1392900E1DB2E /* ViewModelType.swift */,
 				041280532AEF9C1F00972552 /* SignUp */,
 				041280542AEF9C2600972552 /* SignIn */,
@@ -229,6 +232,14 @@
 				4F07B8652BC4B10200E1DB2E /* BirthdayViewModel.swift */,
 			);
 			path = Birthday;
+			sourceTree = "<group>";
+		};
+		4F07B87B2BC825F100E1DB2E /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				4F07B87C2BC825FD00E1DB2E /* SampleViewController.swift */,
+			);
+			path = Sample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +397,7 @@
 				0412806A2AEFA91E00972552 /* SignUpViewController.swift in Sources */,
 				041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */,
 				4F07B8662BC4B10200E1DB2E /* BirthdayViewModel.swift in Sources */,
+				4F07B87D2BC825FD00E1DB2E /* SampleViewController.swift in Sources */,
 				041280262AEF9BAB00972552 /* SceneDelegate.swift in Sources */,
 				041280582AEFA05300972552 /* SignInViewModel.swift in Sources */,
 			);
