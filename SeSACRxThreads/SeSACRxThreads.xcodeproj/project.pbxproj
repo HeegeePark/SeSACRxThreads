@@ -35,6 +35,7 @@
 		4F07B8662BC4B10200E1DB2E /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07B8652BC4B10200E1DB2E /* BirthdayViewModel.swift */; };
 		4F07B87D2BC825FD00E1DB2E /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07B87C2BC825FD00E1DB2E /* SampleViewController.swift */; };
 		4F71AE692BC94C3500A4E210 /* SampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F71AE682BC94C3500A4E210 /* SampleViewModel.swift */; };
+		4F71AE6C2BC95E7200A4E210 /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F71AE6B2BC95E7200A4E210 /* NicknameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		4F07B8652BC4B10200E1DB2E /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
 		4F07B87C2BC825FD00E1DB2E /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		4F71AE682BC94C3500A4E210 /* SampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewModel.swift; sourceTree = "<group>"; };
+		4F71AE6B2BC95E7200A4E210 /* NicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,9 +204,9 @@
 		0412806D2AEFAD0F00972552 /* SignUpOptional */ = {
 			isa = PBXGroup;
 			children = (
+				4F71AE6A2BC95DD700A4E210 /* Nickname */,
 				4F07B8642BC4B07500E1DB2E /* Birthday */,
 				4F07B8422BC138C400E1DB2E /* Phone */,
-				041280722AEFAD4B00972552 /* NicknameViewController.swift */,
 			);
 			path = SignUpOptional;
 			sourceTree = "<group>";
@@ -243,6 +245,15 @@
 				4F71AE682BC94C3500A4E210 /* SampleViewModel.swift */,
 			);
 			path = Sample;
+			sourceTree = "<group>";
+		};
+		4F71AE6A2BC95DD700A4E210 /* Nickname */ = {
+			isa = PBXGroup;
+			children = (
+				041280722AEFAD4B00972552 /* NicknameViewController.swift */,
+				4F71AE6B2BC95E7200A4E210 /* NicknameViewModel.swift */,
+			);
+			path = Nickname;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +412,7 @@
 				4F71AE692BC94C3500A4E210 /* SampleViewModel.swift in Sources */,
 				041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */,
 				4F07B8662BC4B10200E1DB2E /* BirthdayViewModel.swift in Sources */,
+				4F71AE6C2BC95E7200A4E210 /* NicknameViewModel.swift in Sources */,
 				4F07B87D2BC825FD00E1DB2E /* SampleViewController.swift in Sources */,
 				041280262AEF9BAB00972552 /* SceneDelegate.swift in Sources */,
 				041280582AEFA05300972552 /* SignInViewModel.swift in Sources */,
